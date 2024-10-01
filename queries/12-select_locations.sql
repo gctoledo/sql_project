@@ -1,0 +1,13 @@
+-- SQLite
+SELECT l.ID,
+       l.START_DATE,
+       l.END_DATE,
+       l.TOTAL,
+       c.NAME AS 'CUSTOMER',
+       ca.NAME AS 'CAR',
+       e.NAME AS 'EMPLOYEE'
+
+FROM LOCATIONS AS l
+JOIN CUSTOMERS AS c ON (l.CUSTOMER_ID = c.ID)
+JOIN CARS AS ca ON (l.CAR_ID = ca.ID)
+JOIN EMPLOYEES AS e ON (l.EMPLOYEE_ID = e.ID);
